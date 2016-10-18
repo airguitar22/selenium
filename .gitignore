@@ -17,6 +17,7 @@ config.xml
 # Driver binaries #
 ###################
 *chromedriver
+*geckodriver
 
 # OS X #
 ########
