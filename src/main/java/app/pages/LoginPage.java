@@ -18,7 +18,7 @@ import static org.hamcrest.Matchers.containsString;
  * Description:
  */
 
-public class LearnLoginPage extends BasePage {
+public class LoginPage extends BasePage {
 
     private String homePageUrl;
 
@@ -38,12 +38,8 @@ public class LearnLoginPage extends BasePage {
     @WithTimeout(time = 60, unit = TimeUnit.SECONDS)
     public WebElement loginError;
 
-    @FindBy(id = "topframe.logout.label")
-    @WithTimeout(time = 60, unit = TimeUnit.SECONDS)
-    public WebElement logout;
-
-    public LearnLoginPage(WebDriverManager webDriverManager, String homePageUrl) {
-        super(webDriverManager);
+    public LoginPage(WebDriverManager driverManager, String homePageUrl) {
+        super(driverManager);
         this.homePageUrl = homePageUrl;
     }
 

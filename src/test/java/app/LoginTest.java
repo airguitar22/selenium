@@ -1,10 +1,11 @@
 package app;
 
 import app.domain_entities.User;
+import app.pages.HomePage;
 import org.junit.Before;
 import org.junit.Test;
 
-import app.pages.LearnLoginPage;
+import app.pages.LoginPage;
 import base_test.BaseTest;
 import ru.yandex.qatools.allure.annotations.Features;
 import ru.yandex.qatools.allure.annotations.Stories;
@@ -17,19 +18,20 @@ import static org.junit.Assert.assertTrue;
  * Description: Tests valid and invalid login to the site.
  */
 
-public class LearnLoginTest extends BaseTest {
+public class LoginTest extends BaseTest {
 
-    public LearnLoginTest(String browserName, String browserVersion, String osName, String osVersion, String device) {
+    public LoginTest(String browserName, String browserVersion, String osName, String osVersion, String device) {
         super(browserName, browserVersion, osName, osVersion, device);
     }
 
-    private LearnLoginPage learnLoginPage;
+    private LoginPage loginPage;
+    private HomePage homePage;
 
     @Before
     public void setUp() {
         super.setUp();
-        learnLoginPage = new LearnLoginPage(driverManager, homePageUrl);
-        learnLoginPage.get();
+        loginPage = new LoginPage(driverManager, homePageUrl);
+        loginPage.get();
     }
 
     @Features("ULTRA-1001")
@@ -38,8 +40,9 @@ public class LearnLoginTest extends BaseTest {
     public void whenEnterValidCredentialsThenSignInSuccessful() {
         requirementsCoverage.writeToFile("ULTRA-1001-F001 -- login using valid credentials");
 
-        learnLoginPage.enterCredentials(User.USERNAME);
-        assertTrue(learnLoginPage.logout.isDisplayed());
+        loginPage.enterCredentials(User.USERNAME);
+        homePage = new HomePage(driverManager, null);
+        assertTrue(homePage.logout.isDisplayed());
     }
 
     @Features("ULTRA-1001")
@@ -48,8 +51,8 @@ public class LearnLoginTest extends BaseTest {
     public void whenEnterInvalidPasswordThenSignInUnsuccessful() {
         requirementsCoverage.writeToFile("ULTRA-1001-F002 -- login using invalid password");
 
-        learnLoginPage.enterCredentials(User.INVALID_PASSWORD);
-        assertTrue(learnLoginPage.loginError.isDisplayed());
+        loginPage.enterCredentials(User.INVALID_PASSWORD);
+        assertTrue(loginPage.loginError.isDisplayed());
     }
 
     @Features("ULTRA-1001")
@@ -58,7 +61,7 @@ public class LearnLoginTest extends BaseTest {
     public void whenEnterInvalidUsernameThenSignInUnsuccessful() {
         requirementsCoverage.writeToFile("ULTRA-1001-F003 -- login using invalid username");
 
-        learnLoginPage.enterCredentials(User.INVALID_USERNAME);
-        assertTrue(learnLoginPage.loginError.isDisplayed());
+        loginPage.enterCredentials(User.INVALID_USERNAME);
+        assertTrue(loginPage.loginError.isDisplayed());
     }
 }
