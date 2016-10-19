@@ -8,8 +8,6 @@ package app.domain_entities;
 public enum User {
 
     USERNAME("administrator"),
-    BLANK_USERNAME(""),
-    BLANK_PASSWORD(""),
     INVALID_USERNAME("i.do.not.exist"),
     INVALID_PASSWORD("administrator", "jibberish1234");
 
@@ -22,7 +20,7 @@ public enum User {
     }
 
     User(String userName) {
-        this(userName, "hAllow33n!%");
+        this(userName, "45584d8f0676");
     }
 
     public String getUser() {

@@ -4,14 +4,9 @@ import app.domain_entities.User;
 import base_page_obj.BasePage;
 import driver_and_server.webdriver_manager.WebDriverManager;
 import io.appium.java_client.pagefactory.WithTimeout;
-
-import org.omg.CORBA.TIMEOUT;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-
 import ru.yandex.qatools.allure.annotations.Step;
-
-import java.util.Enumeration;
 import java.util.concurrent.TimeUnit;
 
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -23,7 +18,7 @@ import static org.hamcrest.Matchers.containsString;
  * Description:
  */
 
-public class UltraLoginPage extends BasePage {
+public class LearnLoginPage extends BasePage {
 
     private String homePageUrl;
 
@@ -43,7 +38,11 @@ public class UltraLoginPage extends BasePage {
     @WithTimeout(time = 60, unit = TimeUnit.SECONDS)
     public WebElement loginError;
 
-    public UltraLoginPage(WebDriverManager webDriverManager, String homePageUrl) {
+    @FindBy(id = "topframe.logout.label")
+    @WithTimeout(time = 60, unit = TimeUnit.SECONDS)
+    public WebElement logout;
+
+    public LearnLoginPage(WebDriverManager webDriverManager, String homePageUrl) {
         super(webDriverManager);
         this.homePageUrl = homePageUrl;
     }
@@ -56,17 +55,12 @@ public class UltraLoginPage extends BasePage {
     @Override
     protected void isLoaded() throws Error {
         assertThat(driverManager.getPageTitle(), containsString("Blackboard Learn"));
-        assertThat(driverManager.getPageSource(), containsString("Create an Account"));
     }
 
     @Step
     public void enterCredentials(User user) {
         this.userName.sendKeys(user.getUser());
         this.password.sendKeys(user.getPassword());
-    }
-
-    @Step
-    public void clickSignIn() {
         signIn.click();
     }
 }
