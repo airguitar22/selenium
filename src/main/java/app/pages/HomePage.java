@@ -2,7 +2,7 @@ package app.pages;
 
 import app.domain_entities.User;
 import base_page_obj.BasePage;
-import driver_and_server.webdriver_manager.WebDriverManager;
+import driverandserver.webdrivermanager.WebDriverManager;
 import io.appium.java_client.pagefactory.WithTimeout;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;

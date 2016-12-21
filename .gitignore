@@ -14,11 +14,6 @@ log/
 environment.properties
 config.xml
 
-# Driver binaries #
-###################
-*chromedriver
-*geckodriver
-
 # OS X #
 ########
 .DS_Store

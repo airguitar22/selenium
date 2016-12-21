@@ -1,6 +1,6 @@
 package base_page_obj;
 
-import driver_and_server.webdriver_manager.WebDriverManager;
+import driverandserver.webdrivermanager.WebDriverManager;
 import org.openqa.selenium.interactions.Actions;
 import wd_wrappers.WaitManager;
 
