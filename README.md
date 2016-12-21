@@ -1,6 +1,6 @@
-Selenium Scaffold
-=================
-A template project that is already loaded with internal and external dependencies, including (but not limited to): 
+Selenium Example Learn
+======================
+An example project that is cloned from the Selenium Template, but with Learn 9.1 specific examples: 
 
 * The internal Selenium Core and Requirements Coverage modules
 * Selenium WebDriver, JUnit, and Hamcrest
@@ -34,7 +34,6 @@ The base url for the homepage of the app being tested.
 
 ##### runLocation (Required)
 * local
-* browserstack
 * sauce (run at your own risk; better stability planned for the next selenium core version).
 
 ##### api-information (optional)
@@ -51,19 +50,13 @@ Any number of browser configurations can be specified here. The composition of t
     <browser>
         <name> REQUIRED - safari, chrome, ie, iPhone (mobile), or android (mobile) </name>
         <version> REQUIRED - browser version (mobile version if iPhone or android specified for name </version>
-        <os> only needed for desktop browsers on Browserstack and Sauce (defaults to any available) - Windows, OS X </os>
-        <os-version> only needed for desktop browsers on Browserstack and Sauce (defaults to any available) - Mavericks, 10, etc. </os-version>
-        <device> only needed if iPhone or android specified for name; note that mobile is only available on Browserstack </device>
+        <os> only needed for desktop browsers on Sauce (defaults to any available) - Windows, OS X </os>
+        <os-version> only needed for desktop browsers on Sauce (defaults to any available) - Mavericks, 10, etc. </os-version>
+        <device> only needed if iPhone or android specified for name</device>
     </browser>
-
-##### browserstack (Optional -- only needed if running on Browserstack)
-These are the browserstack-specific properties (including your own username and automate-key). These can be reviewed on Browserstack's website: https://www.browserstack.com/automate/java. Note that the vm 'resolution' capability is hard-coded to 1920x1080 for now.
 
 ##### sauce (Optional -- only needed if running on Sauce)
 These are the sauce-specific properties (including your own username and authentication-id). These can be reviewed on Sauce's website in the "Optional Sauce Testing Features" section: https://wiki.saucelabs.com/display/DOCS/Test+Configuration+Options
-
-##### applitools (Optional -- only needed if using Eyes)
-At present, the only property here is your api key.
 
 ### Developing your tests
 You'll find abstract base classes in both _src/main/app/pages_ and _src/test/app_. These should serve as the parent classes for your page objects and tests, respectively. There is an example page object (navigating to Google's homepage) and corresponding test that demonstrate how classes could be written.
@@ -86,7 +79,7 @@ There are some additional comments in BaseTest itself describing what is happeni
     * `@Features` and `@Stories` should be included for each test method as well.
  
 ### Running your tests
-So long as your config file is in place, you should be able to run a test (or tests) directly in IntelliJ or via maven's cli (`$ mvn clean test`). If you'd like to overwrite any of the properties set in your config file, simply include them as a property in the maven cli call (for example: **runLocation** in my .xml config is "local", but I'd like for it to be "browserstack" at runtime. Instead of modifying the xml, I could run the tests with the following command: `$ mvn clean test -DrunLocation=browserstack`).
+So long as your config file is in place, you should be able to run a test (or tests) directly in IntelliJ or via maven's cli (`$ mvn clean test`). If you'd like to overwrite any of the properties set in your config file, simply include them as a property in the maven cli call (for example: **runLocation** in my .xml config is "local", but I'd like for it to be "sauce" at runtime. Instead of modifying the xml, I could run the tests with the following command: `$ mvn clean test -DrunLocation=sauce`).
 
 #### Parallel runs
 You'll notice that BaseTest is set up to use JUnit's Parameterized runner. This is what makes it possible to specify multiple browser configurations. Parallel runs can still be achieved via maven cli using two properties:
@@ -95,7 +88,7 @@ You'll notice that BaseTest is set up to use JUnit's Parameterized runner. This 
     * This defaults to classes. With the Parameterized runner, each browser configuration is considered its own class. Leaving this target as the default, then, means that one test will run at a time, but your different browser configurations will run simultaneously for that test.
     * another option here is to set the target to methods, which will run all the methods in a single test class simultaneously for a single browser configuration (then it'll either go to the next class for that same configuration or the next configuration in the same test class).
 * -DparallelCount
-    * This specifies the maximum number of parallel threads. Note that this doesn't necessarily mean that you will always have the max number available running at once. This is especially important to prevent using more than our available simultaneous VMs on Browserstack or Sauce (in addition to ensuring that you don't overload your local machine if running locally).
+    * This specifies the maximum number of parallel threads. Note that this doesn't necessarily mean that you will always have the max number available running at once. This is especially important to prevent using more than our available simultaneous VMs on Sauce (in addition to ensuring that you don't overload your local machine if running locally).
 
 ### Generating Allure Reports
 After running the desired tests via maven's cli, simply run `$ mvn site`. The generated report will be in _target/site/allure-maven-plugin.html_. You will need to open it up in a browser to view the report (in intelliJ: right-click on the file -> Open In Browser).
