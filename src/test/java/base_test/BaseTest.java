@@ -1,11 +1,9 @@
 package base_test;
 
-import com.applitools.eyes.Eyes;
-import com.applitools.eyes.MatchLevel;
-import driver_and_server.RunLocationFactory;
-import driver_and_server.WebDriverFactory;
-import driver_and_server.webdriver_manager.WebDriverManager;
-import driver_and_server.BrowserCapabilities;
+import driverandserver.RunLocationFactory;
+import driverandserver.WebDriverFactory;
+import driverandserver.webdrivermanager.WebDriverManager;
+import driverandserver.BrowserCapabilities;
 import java.io.File;
 import java.nio.file.Paths;
 import java.util.Collection;
@@ -20,13 +18,12 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.openqa.selenium.WebDriver;
 import reporting.PageSourceHtmlCapture;
-import driver_and_server.remote.sauce.SauceJobManager;
+import driverandserver.remote.sauce.SauceJobManager;
 import reporting.Screenshot;
 import properties.FinalProperties;
-import requirements_coverage.RequirementsCoverage;
-import test_context.AllureEnvPropertiesInitializer;
-import test_context.EyesInitializer;
-import test_context.PropertiesInitializer;
+import requirementscoverage.RequirementsCoverage;
+import testcontext.AllureEnvPropertiesInitializer;
+import testcontext.PropertiesInitializer;
 
 /**
  * Created by Rich Mischler on 9/22/16.
@@ -56,12 +53,10 @@ public abstract class BaseTest {
     @Rule
     public TestName testName = new TestName();
     protected WebDriverManager driverManager;
-    protected Eyes eyes;
     protected RequirementsCoverage requirementsCoverage;
     protected String homePageUrl;
 
     private WebDriverFactory webDriverFactory;
-    private EyesInitializer eyesInitializer;
     private SauceJobManager sauceJobManager;
 
     @Rule
@@ -82,8 +77,6 @@ public abstract class BaseTest {
         BrowserCapabilities browserCapabilities = new BrowserCapabilities(browserName, browserVersion, osName, osVersion, device);
         RunLocationFactory runLocationFactory = new RunLocationFactory(finalProperties, browserCapabilities);
         webDriverFactory = runLocationFactory.getWebDriverFactoryForLocation();
-//        eyesInitializer = new EyesInitializer(finalProperties.get("applitools.api-key"), browserName, finalProperties.get("project-name"));
-//        eyes = eyesInitializer.createEyesWithMatchLevel(MatchLevel.LAYOUT2);
         new AllureEnvPropertiesInitializer(ALLURE_ENV_FILE, finalProperties).initAllureEnvironmentProps();
         homePageUrl = finalProperties.get("home-page-url");
     }
@@ -101,7 +94,6 @@ public abstract class BaseTest {
         sauceJobManager = new SauceJobManager(finalProperties, driver);
         sauceJobManager.addTestName(testName.getMethodName());
 
-//        driver = eyesInitializer.initEyesWithDriver(eyes, driver, testName.getMethodName());
         driverManager = WebDriverManager.createInstance(driver);
     }
 
@@ -109,8 +101,6 @@ public abstract class BaseTest {
     public void tearDown() {
         new Screenshot(driverManager.getScreenshotShooter(), "After test window").captureScreenshot();
         new PageSourceHtmlCapture(driverManager.getPageSource()).capturePageSource();
-//        eyes.abortIfNotClosed();
         driverManager.quitBrowser();
-
     }
 }
