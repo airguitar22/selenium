@@ -25,6 +25,10 @@
             <id>learn_91_testing</id>
             <name>Learn 9.1 Testing</name>
             <url>http://maven.bbpd.io/content/repositories/learn_91_testing</url>
+            <snapshots>
+                <enabled>true</enabled>
+                <updatePolicy>always</updatePolicy>
+            </snapshots>
         </repository>
     </repositories>
 
@@ -37,7 +41,7 @@
         <dependency>
             <groupId>blackboard</groupId>
             <artifactId>requirements-coverage</artifactId>
-            <version>1.0</version>
+            <version>1.0-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>junit</groupId>
