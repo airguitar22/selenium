@@ -21,6 +21,13 @@ An example project that is cloned from the Selenium Template, but with Learn 9.1
 13. Run the following bash command to make the first commit: `$ git commit -m "Initial commit; base project"`
 14. Follow the instructions in the BitBucket repository to set remote and push everything up.
 
+### Running Selenium Standalone Server
+The selenium standalone server must be running in order to run tests locally.
+
+1. Download selenium standalone server https://goo.gl/Lyo36k
+2. Open a bash or command prompt window and run the following command to start the selenium server
+3. Run the command in the folder where you downloaded the selenium server jar: java -jar selenium-server-standalone-3.0.1.jar
+
 ### Setting up your configuration file
 In _src/main/resources_, you should see a file named _example-test-config.xml_. This demonstrates all of the recognized properties that can be set. Note that "config.xml" is already added to _.gitignore_; feel free to use IntelliJ's refactor feature to change the name of the test config file to that. Whatever the new name (or location) may be, be sure to update the `CONFIG_FILE` constant in BaseTest (and register it with _.gitignore_).
 
