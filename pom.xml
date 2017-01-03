@@ -13,9 +13,9 @@
         <maven.version>3.3.9</maven.version>
         <maven-surefire.version>2.19.1</maven-surefire.version>
         <maven-allure.version>2.5</maven-allure.version>
-        <selenium.version>3.0.0</selenium.version>
+        <selenium.version>3.0.1</selenium.version>
         <junit.version>4.12</junit.version>
-        <allure.version>1.4.23</allure.version>
+        <allure.version>1.5.0.RC2</allure.version>
         <parallelCount>1</parallelCount>
         <parallelTarget>classes</parallelTarget>
     </properties>
