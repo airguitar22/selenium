@@ -2,7 +2,7 @@ package app;
 
 import app.pages.HomePage;
 import app.pages.LoginPage;
-import base_test.BaseTest;
+import basetest.BaseTest;
 import org.junit.Before;
 import org.junit.Test;
 import ru.yandex.qatools.allure.annotations.Features;

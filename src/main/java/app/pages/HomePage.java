@@ -1,7 +1,7 @@
 package app.pages;
 
-import app.domain_entities.User;
-import base_page_obj.BasePage;
+import app.domainentities.User;
+import basepageobj.BasePage;
 import driverandserver.webdrivermanager.WebDriverManager;
 import io.appium.java_client.pagefactory.WithTimeout;
 import org.openqa.selenium.WebElement;

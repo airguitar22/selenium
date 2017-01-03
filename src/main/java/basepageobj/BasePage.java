@@ -1,12 +1,12 @@
-package base_page_obj;
+package basepageobj;
 
 import driverandserver.webdrivermanager.WebDriverManager;
 import org.openqa.selenium.interactions.Actions;
-import wd_wrappers.WaitManager;
+import wdwrappers.WaitManager;
 
 import org.openqa.selenium.support.ui.LoadableComponent;
 
-import wd_wrappers.ElementActions;
+import wdwrappers.ElementActions;
 
 /**
  * Created by Rich Mischler on 9/22/16.
