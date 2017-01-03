@@ -42,7 +42,6 @@ public class LoginTest extends BaseTest {
 
         loginPage.enterCredentials(User.USERNAME);
         homePage = new HomePage(driverManager, null);
-
         assertTrue(homePage.logout.isDisplayed());
     }
 
