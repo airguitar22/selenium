@@ -1,4 +1,4 @@
-package base_test;
+package basetest;
 
 import driverandserver.RunLocationFactory;
 import driverandserver.WebDriverFactory;
