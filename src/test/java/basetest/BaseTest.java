@@ -1,12 +1,10 @@
-package base_test;
+package basetest;
 
+import driverandserver.BrowserCapabilities;
 import driverandserver.RunLocationFactory;
 import driverandserver.WebDriverFactory;
+import driverandserver.remote.sauce.SauceJobManager;
 import driverandserver.webdrivermanager.WebDriverManager;
-import driverandserver.BrowserCapabilities;
-import java.io.File;
-import java.nio.file.Paths;
-import java.util.Collection;
 import org.apache.commons.configuration2.ex.ConfigurationException;
 import org.junit.After;
 import org.junit.Before;
@@ -17,13 +15,16 @@ import org.junit.runner.Description;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.openqa.selenium.WebDriver;
-import reporting.PageSourceHtmlCapture;
-import driverandserver.remote.sauce.SauceJobManager;
-import reporting.Screenshot;
 import properties.FinalProperties;
+import reporting.PageSourceHtmlCapture;
+import reporting.Screenshot;
 import requirementscoverage.RequirementsCoverage;
 import testcontext.AllureEnvPropertiesInitializer;
 import testcontext.PropertiesInitializer;
+
+import java.io.File;
+import java.nio.file.Paths;
+import java.util.Collection;
 
 /**
  * Created by Rich Mischler on 9/22/16.
@@ -31,7 +32,7 @@ import testcontext.PropertiesInitializer;
  *
  * Included Steps:
  * 1. Compiles requested properties from xml and cli
- * 2. Creates WebDriver instance for requested run location (local, browserstack, sauce).
+ * 2. Creates WebDriver instance for requested run location (local, sauce).
  *
  * Optional Steps:
  * 1. Initialize driver for use with Applitools Eyes
@@ -44,7 +45,7 @@ import testcontext.PropertiesInitializer;
 public abstract class BaseTest {
 
     private static final File CONFIG_FILE =
-            Paths.get(System.getProperty("user.dir"), "src", "main", "resources", "config.xml").toFile();
+            Paths.get(System.getProperty("user.dir"), "src", "main", "resources", "example-test-config.xml").toFile();
     private static final File ALLURE_ENV_FILE =
             Paths.get(System.getProperty("user.dir"), "src", "main", "resources", "environment.properties").toFile();
 

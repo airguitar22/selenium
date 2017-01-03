@@ -1,4 +1,4 @@
-package wd_wrappers;
+package wdwrappers;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.TimeoutException;

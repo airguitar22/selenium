@@ -2,7 +2,7 @@ package app;
 
 import app.pages.HomePage;
 import app.pages.LoginPage;
-import base_test.BaseTest;
+import basetest.BaseTest;
 import com.google.common.util.concurrent.Uninterruptibles;
 import org.junit.Before;
 import org.junit.Test;

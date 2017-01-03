@@ -1,12 +1,12 @@
 package app;
 
-import app.domain_entities.User;
+import app.domainentities.User;
 import app.pages.HomePage;
 import org.junit.Before;
 import org.junit.Test;
 
 import app.pages.LoginPage;
-import base_test.BaseTest;
+import basetest.BaseTest;
 import ru.yandex.qatools.allure.annotations.Features;
 import ru.yandex.qatools.allure.annotations.Stories;
 

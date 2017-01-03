@@ -5,7 +5,7 @@ An example project that is cloned from the Selenium Template, but with Learn 9.1
 * The internal Selenium Core and Requirements Coverage modules
 * Selenium WebDriver, JUnit, and Hamcrest
 
-### How to create a new project from the scaffold
+### How to create a new project from the template
 1. Create a new directory on your local machine for the project (if you don't already have one).
 2. Clone this scaffold into that new directory.
 3. In a bash (OS X) or gitbash (Windows) window, change directory (cd) into the cloned scaffold.

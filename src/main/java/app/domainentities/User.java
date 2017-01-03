@@ -1,4 +1,4 @@
-package app.domain_entities;
+package app.domainentities;
 
 /**
  * Created by Rich Mischler on 10/13/16.
