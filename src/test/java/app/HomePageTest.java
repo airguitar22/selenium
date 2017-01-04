@@ -6,8 +6,6 @@ import basetest.BaseTest;
 import com.google.common.util.concurrent.Uninterruptibles;
 import org.junit.Before;
 import org.junit.Test;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import ru.yandex.qatools.allure.annotations.Features;
 import ru.yandex.qatools.allure.annotations.Stories;
 
@@ -56,6 +54,7 @@ public class HomePageTest extends BaseTest {
         requirementsCoverage.writeToFile("ULTRA-1002-F002 -- nav to courses tab");
 
         homePage.tabs.get(1).click();
+        assertTrue(homePage.isCoursesLoaded());
     }
 
     @Features("ULTRA-1002")
@@ -65,8 +64,7 @@ public class HomePageTest extends BaseTest {
         requirementsCoverage.writeToFile("ULTRA-1002-F003 -- nav to community tab");
 
         homePage.tabs.get(2).click();
-        WebDriverWait wait = driverManager.createWait(10);
-        assertTrue(wait.until(ExpectedConditions.titleContains("Community")));
+        assertTrue(homePage.isCommunityLoaded());
     }
 
     @Features("ULTRA-1002")
@@ -76,8 +74,7 @@ public class HomePageTest extends BaseTest {
         requirementsCoverage.writeToFile("ULTRA-1002-F004 -- nav to content collection tab");
 
         homePage.tabs.get(3).click();
-        WebDriverWait wait = driverManager.createWait(10);
-        assertTrue(wait.until(ExpectedConditions.titleContains("Content")));
+        assertTrue(homePage.isContentCollectionLoaded());
     }
 
     @Features("ULTRA-1002")
@@ -87,8 +84,7 @@ public class HomePageTest extends BaseTest {
         requirementsCoverage.writeToFile("ULTRA-1002-F005 -- nav to services tab");
 
         homePage.tabs.get(4).click();
-        WebDriverWait wait = driverManager.createWait(10);
-        assertTrue(wait.until(ExpectedConditions.titleContains("Services")));
+        assertTrue(homePage.isServicesLoaded());
     }
 
     @Features("ULTRA-1002")
@@ -98,8 +94,7 @@ public class HomePageTest extends BaseTest {
         requirementsCoverage.writeToFile("ULTRA-1002-F006 -- nav to system admin tab");
 
         homePage.tabs.get(5).click();
-        WebDriverWait wait = driverManager.createWait(20);
-        assertTrue(wait.until(ExpectedConditions.titleContains("System Admin")));
+        assertTrue(homePage.isSystemAdminLoaded());
     }
 
     @Features("ULTRA-1002")
@@ -109,7 +104,6 @@ public class HomePageTest extends BaseTest {
         requirementsCoverage.writeToFile("ULTRA-1002-F007 -- nav to outcomes assessment tab");
 
         homePage.tabs.get(6).click();
-        WebDriverWait wait = driverManager.createWait(10);
-        assertTrue(wait.until(ExpectedConditions.titleContains("Assessment")));
+        assertTrue(homePage.isOutcomesAssessmentLoaded());
     }
 }

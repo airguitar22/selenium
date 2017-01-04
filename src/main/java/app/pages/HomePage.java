@@ -27,10 +27,39 @@ public class HomePage extends BasePage {
 
     @FindBy(css = "table[id='appTabList'] > tbody > tr > td > a")
     public List<WebElement> tabs;
+    // TODO: Split out tabs into individual objects
 
     public HomePage(WebDriverManager driverManager, LoadableComponent<BasePage> parent) {
         super(driverManager);
         this.parent = parent;
+    }
+
+    public boolean isMyInstitutionLoaded() {
+        return waitManager.waitUntilTitleContains("");
+    }
+
+    public boolean isCoursesLoaded() {
+        return waitManager.waitUntilTitleContains("Courses");
+    }
+
+    public boolean isCommunityLoaded() {
+        return waitManager.waitUntilTitleContains("Community");
+    }
+
+    public boolean isContentCollectionLoaded() {
+        return waitManager.waitUntilTitleContains("Content");
+    }
+
+    public boolean isServicesLoaded() {
+        return waitManager.waitUntilTitleContains("Services");
+    }
+
+    public boolean isSystemAdminLoaded() {
+        return waitManager.waitUntilTitleContains("System Admin");
+    }
+
+    public boolean isOutcomesAssessmentLoaded() {
+        return waitManager.waitUntilTitleContains("Assessment");
     }
 
     @Override

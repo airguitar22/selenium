@@ -8,6 +8,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 /**
  * Created by Rich Mischler on 9/22/16.
@@ -63,5 +64,10 @@ public class WaitManager {
 
     public WebElement waitForElementFound(By locator) {
         return wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+    }
+
+    public boolean waitUntilTitleContains(String title) {
+        wait.withTimeout(30, TimeUnit.SECONDS);
+        return wait.until(ExpectedConditions.titleContains(title));
     }
 }
