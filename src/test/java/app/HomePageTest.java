@@ -98,7 +98,7 @@ public class HomePageTest extends BaseTest {
         requirementsCoverage.writeToFile("ULTRA-1002-F006 -- nav to system admin tab");
 
         homePage.tabs.get(5).click();
-        WebDriverWait wait = driverManager.createWait(10);
+        WebDriverWait wait = driverManager.createWait(20);
         assertTrue(wait.until(ExpectedConditions.titleContains("System Admin")));
     }
 
