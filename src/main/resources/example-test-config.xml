@@ -31,12 +31,6 @@
             <os>Windows</os>
             <os-version>10</os-version>
         </browser>
-        <browser>
-            <name>firefox</name>
-            <version>49</version>
-            <os>OS X</os>
-            <os-version>El Capitan</os-version>
-        </browser>
     </browsers>
 
     <sauce>
