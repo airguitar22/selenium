@@ -16,8 +16,6 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.openqa.selenium.WebDriver;
 import properties.FinalProperties;
-import reporting.PageSourceHtmlCapture;
-import reporting.Screenshot;
 import requirementscoverage.RequirementsCoverage;
 import testcontext.AllureEnvPropertiesInitializer;
 import testcontext.PropertiesInitializer;
@@ -100,8 +98,8 @@ public abstract class BaseTest {
 
     @After
     public void tearDown() {
-        new Screenshot(driverManager.getScreenshotShooter(), "After test window").captureScreenshot();
-        new PageSourceHtmlCapture(driverManager.getPageSource()).capturePageSource();
+//        new Screenshot(driverManager.getScreenshotShooter(), "After test window").captureScreenshot();
+//        new PageSourceHtmlCapture(driverManager.getPageSource()).capturePageSource();
         driverManager.quitBrowser();
     }
 }

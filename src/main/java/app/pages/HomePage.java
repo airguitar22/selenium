@@ -8,7 +8,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.LoadableComponent;
 
-import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -25,9 +24,33 @@ public class HomePage extends BasePage {
     @WithTimeout(time = 60, unit = TimeUnit.SECONDS)
     public WebElement logout;
 
-    @FindBy(css = "table[id='appTabList'] > tbody > tr > td > a")
-    public List<WebElement> tabs;
-    // TODO: Split out tabs into individual objects
+    @FindBy(xpath = "//span[contains(text(), 'My Institution')]")
+    @WithTimeout(time = 60, unit = TimeUnit.SECONDS)
+    public WebElement myInstitution;
+
+    @FindBy(xpath = "//span[contains(text(), 'Courses')]")
+    @WithTimeout(time = 60, unit = TimeUnit.SECONDS)
+    public WebElement courses;
+
+    @FindBy(xpath = "//span[contains(text(), 'Community')]")
+    @WithTimeout(time = 60, unit = TimeUnit.SECONDS)
+    public WebElement community;
+
+    @FindBy(xpath = "//span[contains(text(), 'Content Collection')]")
+    @WithTimeout(time = 60, unit = TimeUnit.SECONDS)
+    public WebElement contentCollection;
+
+    @FindBy(xpath = "//span[contains(text(), 'Services')]")
+    @WithTimeout(time = 60, unit = TimeUnit.SECONDS)
+    public WebElement services;
+
+    @FindBy(xpath = "//span[contains(text(), 'System Admin')]")
+    @WithTimeout(time = 60, unit = TimeUnit.SECONDS)
+    public WebElement systemAdmin;
+
+    @FindBy(xpath = "//span[contains(text(), 'Outcomes Assessment')]")
+    @WithTimeout(time = 60, unit = TimeUnit.SECONDS)
+    public WebElement outcomesAssessment;
 
     public HomePage(WebDriverManager driverManager, LoadableComponent<BasePage> parent) {
         super(driverManager);

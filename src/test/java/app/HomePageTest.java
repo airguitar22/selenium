@@ -53,7 +53,7 @@ public class HomePageTest extends BaseTest {
     public void whenClickCoursesTabContainerDisplaysSuccessful() {
         requirementsCoverage.writeToFile("ULTRA-1002-F002 -- nav to courses tab");
 
-        homePage.tabs.get(1).click();
+        homePage.courses.click();
         assertTrue(homePage.isCoursesLoaded());
     }
 
@@ -63,7 +63,7 @@ public class HomePageTest extends BaseTest {
     public void whenClickCommunityTabContainerDisplaysSuccessful() {
         requirementsCoverage.writeToFile("ULTRA-1002-F003 -- nav to community tab");
 
-        homePage.tabs.get(2).click();
+        homePage.community.click();
         assertTrue(homePage.isCommunityLoaded());
     }
 
@@ -73,7 +73,7 @@ public class HomePageTest extends BaseTest {
     public void whenClickContentCollectionTabContainerDisplaysSuccessful() {
         requirementsCoverage.writeToFile("ULTRA-1002-F004 -- nav to content collection tab");
 
-        homePage.tabs.get(3).click();
+        homePage.contentCollection.click();
         assertTrue(homePage.isContentCollectionLoaded());
     }
 
@@ -83,7 +83,7 @@ public class HomePageTest extends BaseTest {
     public void whenClickServicesTabContainerDisplaysSuccessful() {
         requirementsCoverage.writeToFile("ULTRA-1002-F005 -- nav to services tab");
 
-        homePage.tabs.get(4).click();
+        homePage.services.click();
         assertTrue(homePage.isServicesLoaded());
     }
 
@@ -93,7 +93,7 @@ public class HomePageTest extends BaseTest {
     public void whenClickSystemAdminTabContainerDisplaysSuccessful() {
         requirementsCoverage.writeToFile("ULTRA-1002-F006 -- nav to system admin tab");
 
-        homePage.tabs.get(5).click();
+        homePage.systemAdmin.click();
         assertTrue(homePage.isSystemAdminLoaded());
     }
 
@@ -103,7 +103,17 @@ public class HomePageTest extends BaseTest {
     public void whenClickOutcomesAssessmentTabContainerDisplaysSuccessful() {
         requirementsCoverage.writeToFile("ULTRA-1002-F007 -- nav to outcomes assessment tab");
 
-        homePage.tabs.get(6).click();
+        homePage.outcomesAssessment.click();
         assertTrue(homePage.isOutcomesAssessmentLoaded());
+    }
+
+    @Features("ULTRA-1002")
+    @Stories("ULTRA-1002-F008")
+    @Test
+    public void whenClickMyInstitutionTabContainerDisplaysSuccessful() {
+        requirementsCoverage.writeToFile("ULTRA-1002-F008 -- nav to my institution tab");
+
+        homePage.myInstitution.click();
+        assertTrue(homePage.isMyInstitutionLoaded());
     }
 }
