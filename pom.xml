@@ -16,8 +16,8 @@
         <selenium.version>3.0.1</selenium.version>
         <junit.version>4.12</junit.version>
         <allure.version>1.5.0.RC2</allure.version>
-        <parallelCount>1</parallelCount>
-        <parallelTarget>classes</parallelTarget>
+        <parallelCount>2</parallelCount>
+        <parallelTarget>methods</parallelTarget>
     </properties>
 
     <repositories>
@@ -101,7 +101,6 @@
                 <configuration>
                     <parallel>${parallelTarget}</parallel>
                     <threadCount>${parallelCount}</threadCount>
-                    <perCoreThreadCount>false</perCoreThreadCount>
                     <testFailureIgnore>false</testFailureIgnore>
                     <properties>
                         <property>
