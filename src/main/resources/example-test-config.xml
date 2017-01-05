@@ -13,8 +13,8 @@
     </api-information>
 
     <allure>
-        <screenshot-only-on-failure>false</screenshot-only-on-failure>
-        <page-source-only-on-failure>false</page-source-only-on-failure>
+        <screenshot-only-on-failure>true</screenshot-only-on-failure>
+        <page-source-only-on-failure>true</page-source-only-on-failure>
     </allure>
 
     <!--If runLocation is local only need to specify browser name.-->
@@ -27,13 +27,9 @@
         <!--</browser>-->
         <browser>
             <name>chrome</name>
-            <version></version>
-            <platform>ANY</platform>
         </browser>
         <browser>
             <name>firefox</name>
-            <version></version>
-            <platfor>ANY</platfor>
         </browser>
     </browsers>
 
