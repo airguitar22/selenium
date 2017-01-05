@@ -19,23 +19,11 @@
 
     <!--If runLocation is local only need to specify browser name.-->
     <browsers>
-        <!--<browser>-->
-            <!--<name>safari</name>-->
-            <!--<version>10</version>-->
-            <!--<os>OS X</os>-->
-            <!--<os-version>El Capitan</os-version>-->
-        <!--</browser>-->
         <browser>
             <name>chrome</name>
             <version>54</version>
             <os>Windows</os>
             <os-version>10</os-version>
-        </browser>
-        <browser>
-            <name>firefox</name>
-            <version>49</version>
-            <os>OS X</os>
-            <os-version>El Capitan</os-version>
         </browser>
     </browsers>
 
