@@ -29,12 +29,13 @@ The selenium standalone server must be running in order to run tests locally.
 3. Run the command in the folder where you downloaded the selenium server jar: java -jar selenium-server-standalone-3.0.1.jar
 
 ### Setting up your configuration file
+Tests are run based on the settings in the config.xml file in _src/main/resources_
 In _src/main/resources_, you should see a file named _example-test-config.xml_. This demonstrates all of the recognized properties that can be set. Note that "config.xml" is already added to _.gitignore_; feel free to use IntelliJ's refactor feature to change the name of the test config file to that. Whatever the new name (or location) may be, be sure to update the `CONFIG_FILE` constant in BaseTest (and register it with _.gitignore_).
 
 #### Config Sections/Properties
 
 ##### project-name (Required)
-A short name for the app and version being tested (e.g. Portfolio v3.1).
+A short name for the app and version being tested (e.g. Xanadu).
 
 ##### home-page-url (Required)
 The base url for the homepage of the app being tested.
