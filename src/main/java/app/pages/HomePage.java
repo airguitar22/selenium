@@ -54,7 +54,7 @@ public class HomePage extends BasePage {
     }
 
     public boolean isMyInstitutionLoaded() {
-        return waitManager.waitUntilTitleContains("");
+        return waitManager.waitUntilTitleContains("My Institution");
     }
 
     public boolean isCoursesLoaded() {
