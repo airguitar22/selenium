@@ -25,9 +25,9 @@
             <!--<os>OS X</os>-->
             <!--<os-version>El Capitan</os-version>-->
         <!--</browser>-->
-        <!--<browser>-->
-            <!--<name>chrome</name>-->
-        <!--</browser>-->
+        <browser>
+            <name>chrome</name>
+        </browser>
         <browser>
             <name>firefox</name>
         </browser>
