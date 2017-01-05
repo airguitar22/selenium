@@ -100,18 +100,8 @@ public class HomePageTest extends BaseTest {
     @Features("ULTRA-1002")
     @Stories("ULTRA-1002-F007")
     @Test
-    public void whenClickOutcomesAssessmentTabContainerDisplaysSuccessful() {
-        requirementsCoverage.writeToFile("ULTRA-1002-F007 -- nav to outcomes assessment tab");
-
-        homePage.outcomesAssessment.click();
-        assertTrue(homePage.isOutcomesAssessmentLoaded());
-    }
-
-    @Features("ULTRA-1002")
-    @Stories("ULTRA-1002-F008")
-    @Test
     public void whenClickMyInstitutionTabContainerDisplaysSuccessful() {
-        requirementsCoverage.writeToFile("ULTRA-1002-F008 -- nav to my institution tab");
+        requirementsCoverage.writeToFile("ULTRA-1002-F007 -- nav to my institution tab");
 
         homePage.myInstitution.click();
         assertTrue(homePage.isMyInstitutionLoaded());

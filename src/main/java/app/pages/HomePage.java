@@ -48,10 +48,6 @@ public class HomePage extends BasePage {
     @WithTimeout(time = 60, unit = TimeUnit.SECONDS)
     public WebElement systemAdmin;
 
-    @FindBy(xpath = "//span[contains(text(), 'Outcomes Assessment')]")
-    @WithTimeout(time = 60, unit = TimeUnit.SECONDS)
-    public WebElement outcomesAssessment;
-
     public HomePage(WebDriverManager driverManager, LoadableComponent<BasePage> parent) {
         super(driverManager);
         this.parent = parent;
@@ -81,10 +77,6 @@ public class HomePage extends BasePage {
         return waitManager.waitUntilTitleContains("System Admin");
     }
 
-    public boolean isOutcomesAssessmentLoaded() {
-        return waitManager.waitUntilTitleContains("Assessment");
-    }
-
     @Override
     protected void load() {
         if (this.parent instanceof LoginPage) {
@@ -98,6 +90,6 @@ public class HomePage extends BasePage {
 
     @Override
     protected void isLoaded() throws Error{
-        assertThat(driverManager.getPageTitle(), containsString("Notifications Dashboard"));
+        assertThat(driverManager.getPageTitle(), containsString("My Institution"));
     }
 }

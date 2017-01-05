@@ -20,7 +20,7 @@ public enum User {
     }
 
     User(String userName) {
-        this(userName, "45584d8f0676");
+        this(userName, "191eed73d1e1");
     }
 
     public String getUser() {

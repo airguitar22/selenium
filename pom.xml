@@ -101,6 +101,7 @@
                 <configuration>
                     <parallel>${parallelTarget}</parallel>
                     <threadCount>${parallelCount}</threadCount>
+                    <perCoreThreadCount>false</perCoreThreadCount>
                     <testFailureIgnore>false</testFailureIgnore>
                     <properties>
                         <property>
