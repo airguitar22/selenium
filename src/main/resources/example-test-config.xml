@@ -3,7 +3,7 @@
 <configuration>
 
     <project-name>xanadu</project-name>
-    <home-page-url>https://qa-original-adv-dev.int.bbpd.io</home-page-url>
+    <home-page-url>https://qa-mooc-std-dev.int.bbpd.io/</home-page-url>
     <runLocation>local</runLocation>
 
     <!--Feel free to remove this if you aren't using api integration.-->

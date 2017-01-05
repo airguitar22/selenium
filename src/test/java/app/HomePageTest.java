@@ -9,6 +9,8 @@ import org.junit.Test;
 import ru.yandex.qatools.allure.annotations.Features;
 import ru.yandex.qatools.allure.annotations.Stories;
 
+import java.util.concurrent.TimeUnit;
+
 import static org.junit.Assert.assertTrue;
 
 /**
@@ -39,6 +41,8 @@ public class HomePageTest extends BaseTest {
     public void whenClickLogoutThenLogoutSuccessful() {
         requirementsCoverage.writeToFile("ULTRA-1002-F001 -- logout of app");
 
+        // TODO: Remove this line and accept the alert once ULTRA-18179 is in
+        Uninterruptibles.sleepUninterruptibly(5, TimeUnit.SECONDS);
         homePage.logout.click();
         assertTrue(loginPage.signIn.isDisplayed());
     }
@@ -49,7 +53,8 @@ public class HomePageTest extends BaseTest {
     public void whenClickCoursesTabContainerDisplaysSuccessful() {
         requirementsCoverage.writeToFile("ULTRA-1002-F002 -- nav to courses tab");
 
-        homePage.tabs.get(1).click();
+        homePage.courses.click();
+        assertTrue(homePage.isCoursesLoaded());
     }
 
     @Features("ULTRA-1002")
@@ -58,8 +63,8 @@ public class HomePageTest extends BaseTest {
     public void whenClickCommunityTabContainerDisplaysSuccessful() {
         requirementsCoverage.writeToFile("ULTRA-1002-F003 -- nav to community tab");
 
-        homePage.tabs.get(2).click();
-        assertTrue(driverManager.getPageTitle().contains("Community"));
+        homePage.community.click();
+        assertTrue(homePage.isCommunityLoaded());
     }
 
     @Features("ULTRA-1002")
@@ -68,8 +73,8 @@ public class HomePageTest extends BaseTest {
     public void whenClickContentCollectionTabContainerDisplaysSuccessful() {
         requirementsCoverage.writeToFile("ULTRA-1002-F004 -- nav to content collection tab");
 
-        homePage.tabs.get(3).click();
-        assertTrue(driverManager.getPageTitle().contains("Content"));
+        homePage.contentCollection.click();
+        assertTrue(homePage.isContentCollectionLoaded());
     }
 
     @Features("ULTRA-1002")
@@ -78,8 +83,8 @@ public class HomePageTest extends BaseTest {
     public void whenClickServicesTabContainerDisplaysSuccessful() {
         requirementsCoverage.writeToFile("ULTRA-1002-F005 -- nav to services tab");
 
-        homePage.tabs.get(4).click();
-        assertTrue(driverManager.getPageTitle().contains("Services"));
+        homePage.services.click();
+        assertTrue(homePage.isServicesLoaded());
     }
 
     @Features("ULTRA-1002")
@@ -88,17 +93,17 @@ public class HomePageTest extends BaseTest {
     public void whenClickSystemAdminTabContainerDisplaysSuccessful() {
         requirementsCoverage.writeToFile("ULTRA-1002-F006 -- nav to system admin tab");
 
-        homePage.tabs.get(5).click();
-        assertTrue(driverManager.getPageTitle().contains("System Admin"));
+        homePage.systemAdmin.click();
+        assertTrue(homePage.isSystemAdminLoaded());
     }
 
     @Features("ULTRA-1002")
     @Stories("ULTRA-1002-F007")
     @Test
-    public void whenClickOutcomesAssessmentTabContainerDisplaysSuccessful() {
-        requirementsCoverage.writeToFile("ULTRA-1002-F007 -- nav to outcomes assessment tab");
+    public void whenClickMyInstitutionTabContainerDisplaysSuccessful() {
+        requirementsCoverage.writeToFile("ULTRA-1002-F007 -- nav to my institution tab");
 
-        homePage.tabs.get(6).click();
-        assertTrue(driverManager.getPageTitle().contains("Assessment"));
+        homePage.myInstitution.click();
+        assertTrue(homePage.isMyInstitutionLoaded());
     }
 }

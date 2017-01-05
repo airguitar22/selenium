@@ -32,7 +32,7 @@ import java.util.Collection;
  *
  * Included Steps:
  * 1. Compiles requested properties from xml and cli
- * 2. Creates WebDriver instance for requested run location (local, browserstack, sauce).
+ * 2. Creates WebDriver instance for requested run location (local, sauce).
  *
  * Optional Steps:
  * 1. Initialize driver for use with Applitools Eyes
@@ -45,7 +45,7 @@ import java.util.Collection;
 public abstract class BaseTest {
 
     private static final File CONFIG_FILE =
-            Paths.get(System.getProperty("user.dir"), "src", "main", "resources", "config.xml").toFile();
+            Paths.get(System.getProperty("user.dir"), "src", "main", "resources", "example-test-config.xml").toFile();
     private static final File ALLURE_ENV_FILE =
             Paths.get(System.getProperty("user.dir"), "src", "main", "resources", "environment.properties").toFile();
 
