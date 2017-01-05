@@ -7,3 +7,4 @@ ULTRA-1002-F003 -- nav to community tab
 ULTRA-1002-F004 -- nav to content collection tab
 ULTRA-1002-F005 -- nav to services tab
 ULTRA-1002-F006 -- nav to system admin tab
+ULTRA-1002-F007 -- nav to my institution tab
