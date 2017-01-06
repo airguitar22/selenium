@@ -1,6 +1,7 @@
 package basepageobj;
 
 import driverandserver.webdrivermanager.WebDriverManager;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.LoadableComponent;
 import wdwrappers.ElementActions;
@@ -14,12 +15,14 @@ import wdwrappers.WaitManager;
 
 public abstract class BasePage extends LoadableComponent<BasePage> {
 
+    protected WebDriver driver;
     protected WebDriverManager driverManager;
     protected WaitManager waitManager;
     protected ElementActions elActions;
 
     public BasePage(WebDriverManager driverManager) {
         this.driverManager = driverManager;
+        this.driver = driverManager.getDriver();
         this.waitManager = new WaitManager(driverManager.createWait(30));
         Actions actions = driverManager.getActionsObj();
         this.elActions = new ElementActions(waitManager, actions);

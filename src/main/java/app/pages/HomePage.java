@@ -90,6 +90,6 @@ public class HomePage extends BasePage {
 
     @Override
     protected void isLoaded() throws Error{
-        assertThat(driverManager.getPageTitle(), containsString("My Institution"));
+        assertThat(driver.getTitle(), containsString("My Institution"));
     }
 }

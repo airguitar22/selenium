@@ -45,12 +45,12 @@ public class LoginPage extends BasePage {
 
     @Override
     protected void load() {
-        driverManager.navigateToUrl(homePageUrl);
+        driver.get(homePageUrl);
     }
 
     @Override
     protected void isLoaded() throws Error {
-        assertThat(driverManager.getPageTitle(), containsString("Blackboard Learn"));
+        assertThat(driver.getTitle(), containsString("Blackboard Learn"));
     }
 
     @Step
