@@ -53,6 +53,7 @@ public abstract class BaseTest {
 
     @Rule
     public TestName testName = new TestName();
+    protected WebDriver driver;
     protected WebDriverManager driverManager;
     protected RequirementsCoverage requirementsCoverage;
     protected String homePageUrl;
@@ -96,12 +97,13 @@ public abstract class BaseTest {
         sauceJobManager.addTestName(testName.getMethodName());
 
         driverManager = WebDriverManager.createInstance(driver);
+        this.driver = driverManager.getDriver();
     }
 
     @After
     public void tearDown() {
         new Screenshot(driverManager.getScreenshotShooter(), "After test window").captureScreenshot();
-        new PageSourceHtmlCapture(driverManager.getPageSource()).capturePageSource();
-        driverManager.quitBrowser();
+        new PageSourceHtmlCapture(driver.getPageSource()).capturePageSource();
+        driver.quit();
     }
 }
