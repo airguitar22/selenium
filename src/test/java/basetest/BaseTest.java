@@ -103,7 +103,7 @@ public abstract class BaseTest {
     @After
     public void tearDown() {
         new Screenshot(driverManager.getScreenshotShooter(), "After test window").captureScreenshot();
-        new PageSourceHtmlCapture(driverManager.getPageSource()).capturePageSource();
-        driverManager.quitBrowser();
+        new PageSourceHtmlCapture(driver.getPageSource()).capturePageSource();
+        driver.quit();
     }
 }
