@@ -11,6 +11,14 @@
     The base url for the homepage of the app being tested. -->
     <home-page-url>https://qa-original-adv-dev.int.bbpd.io</home-page-url>
 
+    <!-- Admin Username - REQUIRED
+    The admin username for the app being tested. -->
+    <admin-username>Administrator</admin-username>
+
+    <!-- Home Page URL - REQUIRED
+    The admin password for the app being tested. -->
+    <admin-password>45584d8f0676</admin-password>
+
     <!-- Run Location - REQUIRED
     If set to local will run on your local machine, if set to sauce will run through saucelabs.
         <runLocation>local or sauce</runLocation> -->

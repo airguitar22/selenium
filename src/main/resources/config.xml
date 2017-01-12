@@ -4,6 +4,8 @@
 
     <project-name>xanadu</project-name>
     <home-page-url>https://qa-mooc-std-dev.int.bbpd.io/</home-page-url>
+    <admin-username>Administrator</admin-username>
+    <admin-password>191eed73d1e1</admin-password>
     <runLocation>local</runLocation>
 
     <allure>
