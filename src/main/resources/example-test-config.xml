@@ -15,7 +15,7 @@
     The admin username for the app being tested. -->
     <admin-username>Administrator</admin-username>
 
-    <!-- Home Page URL - REQUIRED
+    <!-- Admin Password - REQUIRED
     The admin password for the app being tested. -->
     <admin-password>45584d8f0676</admin-password>
 
