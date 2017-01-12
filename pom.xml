@@ -9,6 +9,7 @@
     <version>1.0</version>
 
     <properties>
+        <selenium-core.version>1.0.2-SNAPSHOT</selenium-core.version>
         <java.version>1.8</java.version>
         <maven.version>3.3.9</maven.version>
         <maven-surefire.version>2.19.1</maven-surefire.version>
@@ -36,7 +37,7 @@
         <dependency>
             <groupId>blackboard</groupId>
             <artifactId>selenium-core</artifactId>
-            <version>1.0.1-SNAPSHOT</version>
+            <version>${selenium-core.version}</version>
         </dependency>
         <dependency>
             <groupId>blackboard</groupId>
