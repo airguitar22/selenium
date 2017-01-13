@@ -1,6 +1,5 @@
 package app.pages;
 
-import app.domainentities.User;
 import basepageobj.BasePage;
 import driverandserver.webdrivermanager.WebDriverManager;
 import io.appium.java_client.pagefactory.WithTimeout;
@@ -81,7 +80,7 @@ public class HomePage extends BasePage {
     protected void load() {
         if (this.parent instanceof LoginPage) {
             parent.get();
-            ((LoginPage)parent).enterCredentials(User.USERNAME);
+            ((LoginPage)parent).enterCredentials(adminUsername, adminPassword);
         } else {
             parent.get();
         }

@@ -35,11 +35,7 @@ import java.util.Collection;
  * 2. Creates WebDriver instance for requested run location (local, sauce).
  *
  * Optional Steps:
- * 1. Initialize driver for use with Applitools Eyes
- * (to include, new up an instance of EyesInitializer in BaseTest constructor and make the call to .createEyes();
- * then in setUp(), re-bind driver as such:
- * driver = eyesInitializer.initEyesWithDriver(eyes, driver, testName.getMethodName());
- * 2. Initialize the SauceJobManager (along with the test watcher to mark passes/fails).
+ * 1. Initialize the SauceJobManager (along with the test watcher to mark passes/fails).
  */
 @RunWith(Parameterized.class)
 public abstract class BaseTest {
@@ -49,7 +45,7 @@ public abstract class BaseTest {
     private static final File ALLURE_ENV_FILE =
             Paths.get(System.getProperty("user.dir"), "src", "main", "resources", "environment.properties").toFile();
 
-    private static FinalProperties finalProperties;
+    public static FinalProperties finalProperties;
 
     @Rule
     public TestName testName = new TestName();
@@ -57,6 +53,8 @@ public abstract class BaseTest {
     protected WebDriverManager driverManager;
     protected RequirementsCoverage requirementsCoverage;
     protected String homePageUrl;
+    protected String adminUsername;
+    protected String adminPassword;
 
     private WebDriverFactory webDriverFactory;
     private SauceJobManager sauceJobManager;
@@ -83,6 +81,7 @@ public abstract class BaseTest {
         homePageUrl = finalProperties.get("home-page-url");
     }
 
+    //Gets the properties and browser configurations from the Config File for use on all Test classes
     @Parameterized.Parameters(name = "{0} {1}")
     public static Collection parameters() throws ConfigurationException {
         finalProperties = new PropertiesInitializer(CONFIG_FILE).initRequestedProperties();
@@ -98,6 +97,8 @@ public abstract class BaseTest {
 
         driverManager = WebDriverManager.createInstance(driver);
         this.driver = driverManager.getDriver();
+        this.adminUsername = finalProperties.get("admin-username");
+        this.adminPassword = finalProperties.get("admin-password");
     }
 
     @After
