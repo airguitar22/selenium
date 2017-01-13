@@ -1,6 +1,6 @@
 package app;
 
-import app.domainentities.User;
+import api.LearnApi;
 import app.pages.HomePage;
 import org.junit.Before;
 import org.junit.Test;
@@ -10,7 +10,9 @@ import basetest.BaseTest;
 import ru.yandex.qatools.allure.annotations.Features;
 import ru.yandex.qatools.allure.annotations.Stories;
 
+import static org.hamcrest.core.IsEqual.equalTo;
 import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertThat;
 
 /**
  * Created by Rich Mischler on 10/13/16.
@@ -40,7 +42,7 @@ public class LoginTest extends BaseTest {
     public void whenEnterValidCredentialsThenSignInSuccessful() {
         requirementsCoverage.writeToFile("ULTRA-1001-F001 -- login using valid credentials");
 
-        loginPage.enterCredentials(User.USERNAME);
+        loginPage.enterCredentials(adminUsername, adminPassword);
         homePage = new HomePage(driverManager, null);
         assertTrue(homePage.logout.isDisplayed());
     }
@@ -51,7 +53,7 @@ public class LoginTest extends BaseTest {
     public void whenEnterInvalidPasswordThenSignInUnsuccessful() {
         requirementsCoverage.writeToFile("ULTRA-1001-F002 -- login using invalid password");
 
-        loginPage.enterCredentials(User.INVALID_PASSWORD);
+        loginPage.enterCredentials(adminUsername, "blabla");
         assertTrue(loginPage.loginError.isDisplayed());
     }
 
@@ -61,7 +63,17 @@ public class LoginTest extends BaseTest {
     public void whenEnterInvalidUsernameThenSignInUnsuccessful() {
         requirementsCoverage.writeToFile("ULTRA-1001-F003 -- login using invalid username");
 
-        loginPage.enterCredentials(User.INVALID_USERNAME);
+        loginPage.enterCredentials("blabla", adminPassword);
         assertTrue(loginPage.loginError.isDisplayed());
+    }
+
+    @Features("ULTRA-1001")
+    @Stories("ULTRA-1001-F004")
+    @Test
+    public void whenGetCurrentUserThenMatches() {
+        requirementsCoverage.writeToFile("ULTRA-1001-F004 -- get current user info from api");
+
+        LearnApi learnApi = new LearnApi(homePageUrl, adminUsername, adminPassword);
+        assertThat(learnApi.usersEndpoint.getCurrentUser().getUserName(), equalTo(adminUsername));
     }
 }

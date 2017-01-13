@@ -1,6 +1,5 @@
 package app.pages;
 
-import app.domainentities.User;
 import basepageobj.BasePage;
 import driverandserver.webdrivermanager.WebDriverManager;
 import io.appium.java_client.pagefactory.WithTimeout;
@@ -54,9 +53,9 @@ public class LoginPage extends BasePage {
     }
 
     @Step
-    public void enterCredentials(User user) {
-        this.userName.sendKeys(user.getUser());
-        this.password.sendKeys(user.getPassword());
+    public void enterCredentials(String user, String pw) {
+        this.userName.sendKeys(user);
+        this.password.sendKeys(pw);
         signIn.click();
     }
 }
