@@ -120,7 +120,7 @@
                 <artifactId>allure-maven-plugin</artifactId>
                 <version>${maven-allure.version}</version>
                 <configuration>
-                    <propertiesFilePath>${basedir}/src/main/java/resources/allure.properties</propertiesFilePath>
+                    <propertiesFilePath>${user.dir}/src/main/java/resources/allure.properties</propertiesFilePath>
                 </configuration>
             </plugin>
             <plugin>
