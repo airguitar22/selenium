@@ -14,6 +14,7 @@
         <maven.version>3.3.9</maven.version>
         <maven-surefire.version>2.19.1</maven-surefire.version>
         <maven-allure.version>2.5</maven-allure.version>
+        <aspectj.version>1.8.3</aspectj.version>
         <parallelCount>4</parallelCount>
         <parallelTarget>classes</parallelTarget>
     </properties>
@@ -63,6 +64,11 @@
                 <configuration>
                     <parallel>${parallelTarget}</parallel>
                     <threadCount>${parallelCount}</threadCount>
+                    <perCoreThreadCount>false</perCoreThreadCount>
+                    <testFailureIgnore>false</testFailureIgnore>
+                    <argLine>
+                        -javaagent:${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar
+                    </argLine>
                     <properties>
                         <property>
                             <name>listener</name>
@@ -70,6 +76,13 @@
                         </property>
                     </properties>
                 </configuration>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.aspectj</groupId>
+                        <artifactId>aspectjweaver</artifactId>
+                        <version>${aspectj.version}</version>
+                    </dependency>
+                </dependencies>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -83,10 +96,10 @@
                             <goal>copy-resources</goal>
                         </goals>
                         <configuration>
-                            <outputDirectory>${basedir}/target/allure-results</outputDirectory>
+                            <outputDirectory>${user.dir}/target/allure-results</outputDirectory>
                             <resources>
                                 <resource>
-                                    <directory>${basedir}/src/main/resources</directory>
+                                    <directory>${user.dir}/src/main/resources</directory>
                                     <includes>
                                         <include>environment.properties</include>
                                     </includes>
