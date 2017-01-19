@@ -89,7 +89,7 @@ public abstract class BaseTest {
     }
 
     @Before
-    public void setUp() {
+    public void baseSetUp() {
         requirementsCoverage = new RequirementsCoverage();
         WebDriver driver = webDriverFactory.getWebDriverSession();
         sauceJobManager = new SauceJobManager(finalProperties, driver);
