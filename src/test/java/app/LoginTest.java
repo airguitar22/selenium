@@ -31,7 +31,6 @@ public class LoginTest extends BaseTest {
 
     @Before
     public void setUp() {
-        super.setUp();
         loginPage = new LoginPage(driverManager, homePageUrl);
         loginPage.get();
     }
