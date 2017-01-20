@@ -35,3 +35,10 @@ dependencies {
     compile group: 'blackboard', name: 'selenium-core', version:'1.0.3-SNAPSHOT'
     compile group: 'blackboard', name: 'requirements-coverage', version:'1.0-SNAPSHOT'
 }
+
+test {
+    maxParallelForks = 10
+    testLogging {
+        events "passed", "skipped", "failed", "standardOut", "standardError"
+    }
+}
