@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<configuration>
+
+    <project-name>xanadu</project-name>
+    <home-page-url>https://qa-mooc-std-dev.int.bbpd.io/</home-page-url>
+    <admin-username>administrator</admin-username>
+    <admin-password>191eed73d1e1</admin-password>
+    <runLocation>local</runLocation>
+
+    <allure>
+        <screenshot-only-on-failure>true</screenshot-only-on-failure>
+        <page-source-only-on-failure>true</page-source-only-on-failure>
+    </allure>
+
+    <browsers>
+        <browser>
+            <name>chrome</name>
+            <version>54</version>
+            <os>OS X</os>
+            <os-version>El Capitan</os-version>
+        </browser>
+    </browsers>
+
+    <sauce>
+        <username>anonymous</username>
+        <authentication-id>anonymous</authentication-id>
+        <record-video>true</record-video>
+        <video-upload-on-pass>true</video-upload-on-pass>
+        <record-screenshots>true</record-screenshots>
+        <capture-html>true</capture-html>
+    </sauce>
+
+</configuration>

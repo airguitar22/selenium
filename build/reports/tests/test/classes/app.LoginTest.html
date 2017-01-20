@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - Class app.LoginTest</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>Class app.LoginTest</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/app.html">app</a> &gt; LoginTest</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">4</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">0</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">13.842s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="tabs">
+<ul class="tabLinks">
+<li>
+<a href="#tab0">Tests</a>
+</li>
+<li>
+<a href="#tab1">Standard output</a>
+</li>
+<li>
+<a href="#tab2">Standard error</a>
+</li>
+</ul>
+<div id="tab0" class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="success">whenEnterInvalidPasswordThenSignInUnsuccessful[chrome 54]</td>
+<td>2.598s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">whenEnterInvalidUsernameThenSignInUnsuccessful[chrome 54]</td>
+<td>2.523s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">whenEnterValidCredentialsThenSignInSuccessful[chrome 54]</td>
+<td>2.993s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">whenGetCurrentUserThenMatches[chrome 54]</td>
+<td>5.728s</td>
+<td class="success">passed</td>
+</tr>
+</table>
+</div>
+<div id="tab1" class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre>***REQUESTING AUTH TOKEN***
+Adding token to request...
+</pre>
+</span>
+</div>
+<div id="tab2" class="tab">
+<h2>Standard error</h2>
+<span class="code">
+<pre>Jan 19, 2017 11:19:19 AM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Attempting bi-dialect session, assuming Postel's Law holds true on the remote end
+Jan 19, 2017 11:19:20 AM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: OSS
+Jan 19, 2017 11:19:22 AM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Attempting bi-dialect session, assuming Postel's Law holds true on the remote end
+Jan 19, 2017 11:19:23 AM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: OSS
+Jan 19, 2017 11:19:25 AM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Attempting bi-dialect session, assuming Postel's Law holds true on the remote end
+Jan 19, 2017 11:19:25 AM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: OSS
+[Test worker] INFO api.LearnApi - ***STARTING JERSEY CLIENT***
+[Test worker] INFO api.LearnApi - ***CURRENT AUTH TOKEN: Bearer R6RSWqiz5dBSLqWJq62aivyudTJOMYay ***
+Jan 19, 2017 11:19:29 AM org.glassfish.jersey.logging.LoggingInterceptor log
+FINE: 1 * Sending client request on thread Test worker
+1 &gt; GET https://qa-mooc-std-dev.int.bbpd.io/learn/api/public/v1/users/me
+1 &gt; Authorization: Bearer R6RSWqiz5dBSLqWJq62aivyudTJOMYay
+
+Jan 19, 2017 11:19:30 AM org.glassfish.jersey.logging.LoggingInterceptor log
+FINE: 1 * Client response received on thread Test worker
+1 &lt; 200
+1 &lt; Cache-Control: must-revalidate,no-store,max-age=0,private,no-cache=&quot;set-cookie&quot;
+1 &lt; Connection: keep-alive
+1 &lt; Content-Length: 433
+1 &lt; Content-Security-Policy: frame-ancestors 'self'
+1 &lt; Content-Type: application/json;charset=UTF-8
+1 &lt; Date: Thu, 19 Jan 2017 16:19:30 GMT
+1 &lt; Expires: Tue, 19 Jan 2016 16:19:30 GMT
+1 &lt; Last-Modified: Sun, 19 Jan 1997 16:19:30 GMT
+1 &lt; P3P: CP=&quot;CAO PSA OUR&quot;
+1 &lt; Pragma: private
+1 &lt; Server: openresty/1.9.3.1
+1 &lt; Set-Cookie: AWSELB=7159858D06B1A8B57AB525712A54E0495F7B0C04DA7D6A7986C0774834622E8E41C71EC520AC8252DF8C110E662857D682DC8A890656323BC27939F80CFBE1F0242A026966;PATH=/,JSESSIONID=677F781BE3BAB7ADF7D0554BF10F7CEC;path=/learn/api;Secure
+1 &lt; X-Blackboard-appserver: ip-10-145-50-159.ec2.internal
+1 &lt; X-Blackboard-Context-Version: 3100.11.0-ci.1+197b459
+1 &lt; X-Blackboard-product: Blackboard Learn &amp;#8482; 3100.11.0-ci.1+197b459
+1 &lt; X-Frame-Options: SAMEORIGIN
+1 &lt; X-Rate-Limit-Limit: 10000
+1 &lt; X-Rate-Limit-Remaining: 9999
+1 &lt; X-Rate-Limit-Reset: 45629
+{&quot;id&quot;:&quot;_1_1&quot;,&quot;uuid&quot;:&quot;541279d1de5c4dd89cc4ad18a119b3ee&quot;,&quot;externalId&quot;:&quot;administrator&quot;,&quot;dataSourceId&quot;:&quot;_1_1&quot;,&quot;userName&quot;:&quot;administrator&quot;,&quot;educationLevel&quot;:&quot;Unknown&quot;,&quot;gender&quot;:&quot;Unknown&quot;,&quot;created&quot;:&quot;2016-11-28T16:09:38.042Z&quot;,&quot;lastLogin&quot;:&quot;2017-01-19T16:19:21.576Z&quot;,&quot;systemRoleIds&quot;:[&quot;SystemAdmin&quot;],&quot;availability&quot;:{&quot;available&quot;:&quot;Yes&quot;},&quot;name&quot;:{&quot;given&quot;:&quot;Blackboard&quot;,&quot;family&quot;:&quot;Administrator&quot;},&quot;contact&quot;:{&quot;email&quot;:&quot;admin@qa-mooc-std-dev.int.bbpd.io&quot;}}
+
+Jan 19, 2017 11:19:31 AM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Attempting bi-dialect session, assuming Postel's Law holds true on the remote end
+Jan 19, 2017 11:19:31 AM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: OSS
+</pre>
+</span>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="http://www.gradle.org">Gradle 3.1</a> at Jan 19, 2017 11:19:33 AM</p>
+</div>
+</div>
+</body>
+</html>

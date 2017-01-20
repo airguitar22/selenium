@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--This xml serves as an example of the different configurations you can use in your project.-->
+
+<configuration>
+    <!-- Project Name - REQUIRED
+    This is the name of the app or project being tested. -->
+    <project-name>xanadu</project-name>
+
+    <!-- Home Page URL - REQUIRED
+    The base url for the homepage of the app being tested. -->
+    <home-page-url>https://qa-original-adv-dev.int.bbpd.io</home-page-url>
+
+    <!-- Admin Username - REQUIRED
+    The admin username for the app being tested. -->
+    <admin-username>Administrator</admin-username>
+
+    <!-- Admin Password - REQUIRED
+    The admin password for the app being tested. -->
+    <admin-password>45584d8f0676</admin-password>
+
+    <!-- Run Location - REQUIRED
+    If set to local will run on your local machine, if set to sauce will run through saucelabs.
+        <runLocation>local or sauce</runLocation> -->
+    <runLocation>local</runLocation>
+
+    <!-- API Information - OPTIONAL
+    Use this only when you are integrating with the API(s) of the app.-->
+    <api-information>
+        <scheme>https</scheme>
+        <host-name>my_cool_api</host-name>
+    </api-information>
+
+    <!-- Allure Report - OPTIONAL
+    If set to false then screenshots and pagesource will be captured for passed and failed tests on the Allure report.
+    If set to true then screenshots and pagesource will be captured for failed tests only on the Allure report.
+    <allure>
+        <screenshot-only-on-failure> true or false </screenshot-only-on-failure>
+        <page-source-only-on-failure> true or false </page-source-only-on-failure>
+    </allure>-->
+    <allure>
+        <screenshot-only-on-failure>true</screenshot-only-on-failure>
+        <page-source-only-on-failure>true</page-source-only-on-failure>
+    </allure>
+
+    <!-- Browser - REQUIRED
+    Below are examples of different browser/version/os/osversion configurations. You can have as many browsers as you want.
+    <browser>
+        <name> REQUIRED - safari, chrome, ie, iPhone (mobile), or android (mobile) </name>
+        <version> REQUIRED - browser version (mobile version if iPhone or android specified for name) </version>
+        <os> only needed for Sauce (defaults to any available locally) - options are OS X, Linux, or Windows </os>
+        <os-version> only needed for Sauce (defaults to any available locally) - options could be El Capitan, 10, ect. </os-version>
+        <device> only needed if iPhone or android specified for name - options are iPhone, android </device>
+    </browser>-->
+    <browsers>
+        <browser>
+            <name>chrome</name>
+            <version>54</version>
+            <os>OS X</os>
+            <os-version>El Capitan</os-version>
+        </browser>
+        <browser>
+            <name>chrome</name>
+            <version>48</version>
+            <os>Linux</os>
+        </browser>
+        <browser>
+            <name>firefox</name>
+            <version>49</version>
+            <os>Windows</os>
+            <os-version>10</os-version>
+        </browser>
+        <browser>
+            <name>ie</name>
+            <version>11</version>
+            <os>Windows</os>
+            <os-version>10</os-version>
+        </browser>
+    </browsers>
+
+    <!-- Saucelabs - OPTIONAL (only needed if running on saucelabs)
+    These are the sauce-specific properties (including your own username and authentication-id).
+    These can be reviewed on Sauce's website in the "Optional Sauce Testing Features" section:
+    https://wiki.saucelabs.com/display/DOCS/Test+Configuration+Options -->
+    <sauce>
+        <username>anonymous</username>
+        <authentication-id>anonymous</authentication-id>
+        <record-video>true</record-video>
+        <video-upload-on-pass>true</video-upload-on-pass>
+        <record-screenshots>true</record-screenshots>
+        <capture-html>false</capture-html>
+    </sauce>
+
+</configuration>
