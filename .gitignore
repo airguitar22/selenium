@@ -16,3 +16,11 @@ environment.properties
 # OS X #
 ########
 .DS_Store
+
+# Gradle #
+#############
+/build/
+gradle-app.setting
+!gradle-wrapper.jar
+.gradletasknamecache
+.gradle
