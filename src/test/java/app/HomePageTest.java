@@ -29,7 +29,6 @@ public class HomePageTest extends BaseTest {
 
     @Before
     public void setUp() {
-        super.setUp();
         loginPage = new LoginPage(driverManager, homePageUrl);
         homePage = new HomePage(driverManager, loginPage);
         homePage.get();
