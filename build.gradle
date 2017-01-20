@@ -1,18 +1,33 @@
 apply plugin: 'java'
 apply plugin: 'maven'
+apply plugin: 'ru.d10xa.allure'
 
-group = 'blackboard'
-version = '1.0'
+defaultTasks 'clean', 'test'
 
-description = """"""
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath "ru.d10xa:gradle-allure-plugin:0.5.5"
+    }
+}
 
-sourceCompatibility = 1.8
-targetCompatibility = 1.8
+allure {
+    aspectjweaver = true
+    junit = true
+    allureResultsDir = "$buildDir/allure-results"
+    allureReportDir = "$buildDir/allure-report"
 
+    allureVersion = "1.4.24.RC3"
+    aspectjVersion = "1.8.9"
+    allureJunitAspectjAdaptorVersion = "0.1.1"
 
+    clean = true
+    tasks.withType(Test)*.finalizedBy allureReport
+}
 
 repositories {
-        
      maven { url "http://maven.bbpd.io/content/repositories/learn_91_testing" }
      maven { url "http://repo.maven.apache.org/maven2" }
 }
