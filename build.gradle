@@ -37,7 +37,7 @@ dependencies {
 }
 
 test {
-    maxParallelForks = 10
+    maxParallelForks = 4
     testLogging {
         events "passed", "skipped", "failed", "standardOut", "standardError"
     }
