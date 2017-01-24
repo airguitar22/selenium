@@ -3,6 +3,11 @@
 .idea/
 *.iml
 
+# Maven #
+#This target folder got generated for some reason. I believe we will need to modify Selenium-Core to keep it from getting generated.
+#For now I will ignore it.
+target
+
 # Properties #
 ##############
 environment.properties
