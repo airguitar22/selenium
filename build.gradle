@@ -31,6 +31,7 @@ repositories {
      maven { url "http://maven.bbpd.io/content/repositories/learn_91_testing" }
      maven { url "http://repo.maven.apache.org/maven2" }
 }
+
 dependencies {
     compile group: 'blackboard', name: 'selenium-core', version:'1.0.3-SNAPSHOT'
     compile group: 'blackboard', name: 'requirements-coverage', version:'1.0-SNAPSHOT'
@@ -39,6 +40,24 @@ dependencies {
 test {
     maxParallelForks = 4
     testLogging {
-        events "passed", "skipped", "failed", "standardOut", "standardError"
+        events "passed", "skipped", "failed", "standardOut"
+        exceptionFormat "full"
+
+    debug {
+        events "started", "passed", "skipped", "failed", "standardOut", "standardError"
+        exceptionFormat "full"
+    }
+
+    info.events = debug.events
+    info.exceptionFormat = debug.exceptionFormat
+
+        afterSuite { desc, result ->
+            if (!desc.parent) {
+                def output = "Results: ${result.resultType} (${result.testCount} tests, ${result.successfulTestCount} successes, ${result.failedTestCount} failures, ${result.skippedTestCount} skipped)"
+                def startItem = '|  ', endItem = '  |'
+                def repeatLength = startItem.length() + output.length() + endItem.length()
+                println('\n' + ('-' * repeatLength) + '\n' + startItem + output + endItem + '\n' + ('-' * repeatLength))
+            }
+        }
     }
 }
